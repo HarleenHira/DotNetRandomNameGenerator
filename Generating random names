@@ -1,0 +1,25 @@
+public string CreateFreshUser()
+        {
+            string firstName = "";
+            string lastName = "";
+            string email = "";
+            string completename = "";
+            try
+            {
+                var personGenerator = new PersonNameGenerator();
+                string name = personGenerator.GenerateRandomFirstAndLastName();
+                string[] fullname = name.Split(' ');
+                firstName = fullname[0];
+                lastName = fullname[1];
+                email = "Auto"+firstName + "@abc.com";
+                Helper.EnterText(first_name, firstName);
+                Helper.EnterText(last_name, lastName);
+                Helper.EnterText(emailId, email);
+                 completename = fullname[0] + " " + fullname[1];
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return completename;
+        }
